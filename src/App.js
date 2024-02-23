@@ -9,10 +9,10 @@ import NotDone from './components/NotDone';
 const App = () => {
 
   const [todos, setTodos] = useState([
-    { id: 1, title: '', body: '', isDone: false },
-    { id: 2, title: '1', body: '22', isDone: false },
-    { id: 3, title: '2', body: '33', isDone: true },
-    { id: 4, title: '3', body: '44', isDone: false },
+    // { id: 1, title: '', body: '', isDone: false },
+    // { id: 2, title: '1', body: '22', isDone: false },
+    // { id: 3, title: '2', body: '33', isDone: true },
+    // { id: 4, title: '3', body: '44', isDone: false },
   ]);
 
   const [title, setTitle] = useState('');
