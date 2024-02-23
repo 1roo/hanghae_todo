@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import './App.css';
+import { MdFileDownloadDone } from "react-icons/md";
+import { BsFire } from "react-icons/bs";
+import Done from './components/Done';
+import NotDone from './components/NotDone';
+
 
 const App = () => {
 
@@ -26,6 +31,23 @@ const App = () => {
     setBody("");
   };
 
+  const deleteButtonHandler = (id) => {
+    const newTodos = todos.filter(function (todo) {
+      return todo.id !== id;
+    });
+    setTodos(newTodos);
+  }
+
+  const changeStatus = (id) => {
+    const newTodos = todos.map((todo) => {
+      if (todo.id === id) {
+        return { ...todo, isDone: !todo.isDone };
+      }
+      return todo;
+    });
+    setTodos(newTodos);
+  }
+
   const notDoneTodos = todos.filter(function (todo) {
     return todo.isDone === false;
   });
@@ -35,32 +57,34 @@ const App = () => {
   });
 
 
+
+
   return (
-    <div>
-
-      <div className="input-group">
-        <label>제목</label>
-        <input value={title} onChange={(event) => {
-          setTitle(event.target.value)
-        }} />
-        <label>내용</label>
-        <input value={body} onChange={(event) => {
-          setBody(event.target.value)
-        }} />
+    <div className="container">
+      <div className="input-bar">
+        <div className="input-group">
+          <label>제목</label>
+          <input value={title} onChange={(event) => {
+            setTitle(event.target.value)
+          }} />
+          <label>내용</label>
+          <input value={body} onChange={(event) => {
+            setBody(event.target.value)
+          }} />
+        </div>
+        <button className="add-btn" onClick={addButtonHandler}>추가하기</button>
       </div>
-      <button onClick={addButtonHandler}>추가하기</button>
-
-      <span>해야할 것</span>
+      <span className="section-title">Working<BsFire /></span>
       <div className="not-done">
         {notDoneTodos.map(function (item) {
-          return <NotDone key={item.id} item={item} />
+          return <NotDone key={item.id} item={item} deleteButtonHandler={deleteButtonHandler} changeStatus={changeStatus} />
         })}
       </div>
 
-      <span>완료한 것</span>
+      <span className="section-title">Done!!<MdFileDownloadDone /></span>
       <div className="done">
         {doneTodos.map(function (item) {
-          return <Done key={item.id} item={item} />
+          return <Done key={item.id} item={item} deleteButtonHandler={deleteButtonHandler} changeStatus={changeStatus} />
         })}
       </div>
 
@@ -71,27 +95,9 @@ const App = () => {
 }
 
 
-const NotDone = ({ item }) => {
-  return (
-    <div key={item.id} className="component-style">
-      {item.title}<br/>
-      {item.body}
-      <button>삭제하기</button>
-      <button>완료</button>
-    </div>
-  )
-}
 
-const Done = ({ item }) => {
-  return (
-    <div key={item.id} className="component-style">
-      {item.title}<br/>
-      {item.body}
-      <button>삭제하기</button>
-      <button>취소</button>
-    </div>
-  )
-}
+
+
 
 
 
