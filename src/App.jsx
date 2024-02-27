@@ -1,24 +1,13 @@
 import React, { useState } from "react";
 import './App.css';
-import TodoList from "./pages/TodoList";
+import Router from "./shared/Router";
 
 
-const App = () => {
+function App() {
 
-  return (
-    <>
-      <TodoList />
-    </>
-  )
-
+  return <Router />
 
 }
-
-
-
-
-
-
 
 
 export default App;

@@ -1,15 +1,18 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import TodoRegist from '../components/TodoRegist'
 import TodoStatus from "../components/TodoStatus";
+import About from "./About";
 
 
-const TodoList = () => {
-    const [todos, setTodos] = useState([
-        { id: 1, title: '1리액트 공부하기', body: '1리액트 기초를 공부합시다', isDone: false },
-        { id: 2, title: '2리액트 공부하기', body: '2리액트 기초를 공부합시다', isDone: false },
-        { id: 3, title: '3리액트 공부하기', body: '3리액트 기초를 공부합시다', isDone: false },
-        { id: 4, title: '4리액트 공부하기', body: '4리액트 기초를 공부합시다', isDone: false },
-    ])
+const TodoList = ({ todos, setTodos }) => {
+    // todos데이터
+    // const [todos, setTodos] = useState([
+    //     { id: 1, title: '1리액트 공부하기', body: '1리액트 기초를 공부합시다', isDone: false },
+    //     { id: 2, title: '2리액트 공부하기', body: '2리액트 기초를 공부합시다', isDone: false },
+    //     { id: 3, title: '3리액트 공부하기', body: '3리액트 기초를 공부합시다', isDone: false },
+    //     { id: 4, title: '4리액트 공부하기', body: '4리액트 기초를 공부합시다', isDone: false },
+    // ])
 
 
 
@@ -17,8 +20,16 @@ const TodoList = () => {
     //todo 등록
     const registTodoHandler = ({ title, body }) => {
 
+        function makeNewId() {
+            if (todos.length > 0) {
+                return todos[todos.length - 1].id + 1;
+            } else {
+                return 1;
+            }
+        }
+
         const newTodo = {
-            id: todos.length + 1,
+            id: makeNewId(),
             title,
             body,
             isDone: false,
@@ -51,6 +62,8 @@ const TodoList = () => {
         <>
             <TodoRegist registTodoHandler={registTodoHandler} />
             <TodoStatus todos={todos} deleteTodoHandler={deleteTodoHandler} isTodoDoneHandler={isTodoDoneHandler} />
+            {/* <About todos={todos} /> */}
+
         </>
     )
 
