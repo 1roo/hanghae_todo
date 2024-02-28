@@ -28,7 +28,7 @@ function TodoList() {
                         return (
                             <div className="todo-container" key={todo.id}>
                                 <div>
-                                    <Link to={`/${todo.id}`} key={todo.id}>{todo.id}상세보기</Link>
+                                    <Link to={`/${todo.id}`} key={todo.id}>상세보기</Link>
                                     <h3>{todo.title}</h3>
                                     <p>{todo.body}</p>
                                 </div>
