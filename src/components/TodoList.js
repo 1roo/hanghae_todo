@@ -1,8 +1,22 @@
-import React from "react";
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { deleteTodo, changeStatusTodo } from '../redux/modules/todos';
 
-const TodoStatus = ({ todos, deleteTodoHandler, isTodoDoneHandler }) => {
-    console.log('todos: ', todos);
+function TodoList() {
+
+    const todos = useSelector((state) => state.todos.todos);
+    const dispatch = useDispatch();
+
+    const deleteTodoHandler = (id) => {
+        dispatch(deleteTodo(id));
+    };
+
+    const isTodoDoneHandler = (id) => {
+        dispatch(changeStatusTodo(id));
+    }
+
+
 
     return (
         <div>
@@ -14,7 +28,7 @@ const TodoStatus = ({ todos, deleteTodoHandler, isTodoDoneHandler }) => {
                         return (
                             <div className="todo-container" key={todo.id}>
                                 <div>
-                                    <Link to={`/about/${todo.id}`}>상세보기</Link>
+                                    <Link to={`/${todo.id}`} key={todo.id}>{todo.id}상세보기</Link>
                                     <h3>{todo.title}</h3>
                                     <p>{todo.body}</p>
                                 </div>
@@ -28,6 +42,8 @@ const TodoStatus = ({ todos, deleteTodoHandler, isTodoDoneHandler }) => {
                                 </div>
                             </div>
                         )
+                    } else {
+                        return null;
                     }
                 })}
             </div>
@@ -39,7 +55,7 @@ const TodoStatus = ({ todos, deleteTodoHandler, isTodoDoneHandler }) => {
                         return (
                             <div className="todo-container" key={todo.id}>
                                 <div>
-                                    <Link to={`/about/${todo.id}`}>상세보기</Link>
+                                    <Link to={`/${todo.id}`} key={todo.id}>상세보기</Link>
                                     <h3>{todo.title}</h3>
                                     <p>{todo.body}</p>
                                 </div>
@@ -53,13 +69,13 @@ const TodoStatus = ({ todos, deleteTodoHandler, isTodoDoneHandler }) => {
                                 </div>
                             </div>
                         )
+                    } else {
+                        return null;
                     }
                 })}
             </div>
         </div>
     )
-
 }
 
-
-export default TodoStatus;
+export default TodoList

@@ -1,130 +1,135 @@
 body {
-  max-width: 1200px;
-  min-width: 800px;
-  margin: 0 auto;
+    max-width: 1200px;
+    min-width: 800px;
+    margin: 0 auto;
 }
 
 .input-bar {
-  border: 1px solid rgb(199, 198, 198);
-  background-color: rgb(199, 198, 198);
-  height: 50px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 600;
-}
-.regist-btn {
-  height: 36px;
-  width: 100px;
-  border-radius: 10px;
-  border-color: transparent;
-  background-color: olive;
-  color: white;
-  font-weight: 600;
-}
-.regist-btn:hover {
-  cursor: pointer;
-  background-color: olivedrab;
+    border: 1px solid rgb(199, 198, 198);
+    background-color: rgb(199, 198, 198);
+    height: 50px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
 }
 
-.inputs > input {
-  height: 30px;
-  width: 300px;
-  border-radius: 10px;
-  margin:0 20px 0 10px;
-  border-color: transparent;
+.regist-btn {
+    height: 36px;
+    width: 100px;
+    border-radius: 10px;
+    border-color: transparent;
+    background-color: olive;
+    color: white;
+    font-weight: 600;
+}
+
+.regist-btn:hover {
+    cursor: pointer;
+    background-color: olivedrab;
+}
+
+.inputs>input {
+    height: 30px;
+    width: 300px;
+    border-radius: 10px;
+    margin: 0 20px 0 10px;
+    border-color: transparent;
 }
 
 .todo-list {
-  display: flex;
+    display: flex;
 }
 
-.not-done-btn, .done-btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.not-done-btn,
+.done-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .todo-container {
-  width: 200px;
-  height: 150px;
-  margin: 0 10px;
-  border: 2px solid olive;
-  border-radius: 10px;
-  padding: 10px;
+    width: 200px;
+    height: 150px;
+    margin: 0 10px;
+    border: 2px solid olive;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 /* .title {
-  height: 30px;
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.body {
-  height: 70px;
-  margin-top: 5px;;
-  font-size: 18px;
-  padding: 5px;
-} */
+    height: 30px;
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .body {
+    height: 70px;
+    margin-top: 5px;;
+    font-size: 18px;
+    padding: 5px;
+  } */
 
 .btns {
-  display: flex;
-  justify-content: space-evenly
+    display: flex;
+    justify-content: space-evenly
 }
 
 .btns button {
-  width: 90px;
-  height: 30px;
-  border-radius: 10px;
-  border: none;
-  background-color: transparent;
+    width: 90px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
 }
 
-.btns > button:first-child {
-  border: 2px solid red;
-  color: red;
-}
-.btns > button:first-child:hover {
-  border: 2px solid red;
-  background-color: red;
-  color: white;
-  cursor: pointer;
+.btns>button:first-child {
+    border: 2px solid red;
+    color: red;
 }
 
-.btns > button:last-child {
-  border: 2px solid olive;
-  color: olive;
+.btns>button:first-child:hover {
+    border: 2px solid red;
+    background-color: red;
+    color: white;
+    cursor: pointer;
 }
-.btns > button:last-child:hover {
-  border: 2px solid olive;
-  background-color: olive;
-  color: white;
-  cursor: pointer;
+
+.btns>button:last-child {
+    border: 2px solid olive;
+    color: olive;
+}
+
+.btns>button:last-child:hover {
+    border: 2px solid olive;
+    background-color: olive;
+    color: white;
+    cursor: pointer;
 }
 
 .detail-box {
-  margin: 100px auto;
-  width: 400px;
-  height: 250px;
-  border: 1px solid black;
-  padding: 10px;
+    margin: 100px auto;
+    width: 400px;
+    height: 250px;
+    border: 1px solid black;
+    padding: 10px;
 }
 
 .link {
-  border: 0.5px solid gray;
-  width: 80px;
-  height: 30px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 20px;
+    border: 0.5px solid gray;
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
 }
 
 .detail-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

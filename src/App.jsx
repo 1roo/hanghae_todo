@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import './App.css';
 import Router from "./shared/Router";
 
 
-function App() {
+
+const App = () => {
 
   return <Router />
 
